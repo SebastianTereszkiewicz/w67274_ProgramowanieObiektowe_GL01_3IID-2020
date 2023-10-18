@@ -13,5 +13,5 @@ public class Licz
 
     
 }
-//test jedostkowy
+//test jedostkowy Nunit
 
