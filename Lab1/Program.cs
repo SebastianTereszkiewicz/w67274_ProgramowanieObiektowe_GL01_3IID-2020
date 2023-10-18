@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Reflection;
 using System.Xml;
+using ClassLibrary1.Models;
 
 namespace Lab1
 {
