@@ -15,6 +15,8 @@ namespace ConsoleAppLab1
                 Console.WriteLine("1.Sprawdz czy liczba jest patzysta lub nieparzysta");
                 Console.WriteLine("2. Liczby parzyste");
                 Console.WriteLine("3. Silnia");
+                Console.WriteLine("4. Gra");
+                Console.WriteLine("0. Wyjdź");
 
                 var input = Console.ReadLine();
 
@@ -29,6 +31,9 @@ namespace ConsoleAppLab1
                         break;
                     case 3:
                         Console.WriteLine(Silnia());
+                        break;
+                    case 4:
+                        Game();
                         break;
                 }
             }
@@ -82,7 +87,37 @@ namespace ConsoleAppLab1
             return wynik;
         }
 
+        static void Game()
+        {
+            var random = new Random();
+            var number = random.Next(1, 101);//1-100
 
+            int count = 0;
+            int shoot;
+            do
+            {
+                count++;
+                Console.WriteLine("Podaj liczbe");
+                var input = Console.ReadLine();
+
+                shoot = int.Parse(input);
+
+                if (shoot == number)
+                {
+                    break;
+                }
+                if (shoot > number)
+                {
+                    Console.WriteLine("Za duża");
+                }
+                else
+                {
+                    Console.WriteLine("Za mała");
+                }
+            }
+            while (shoot != number);
+            Console.WriteLine($"Zgadłeś za {count}");
+        }
 
     }
 }
