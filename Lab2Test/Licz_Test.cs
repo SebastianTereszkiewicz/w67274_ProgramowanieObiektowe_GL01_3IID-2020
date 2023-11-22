@@ -9,7 +9,7 @@ namespace NUnitTestProject1
         [SetUp]
         public void Setup()
         {
-            licz = new Licz();
+            licz = new Licz(5);
         }
 
         [Test]
@@ -20,12 +20,19 @@ namespace NUnitTestProject1
 
 
         [Test]
-        [TestCase(2, 5, 7)]
-        [TestCase(5, 6, 11)]
+        [TestCase(2, 5, -3)]
+        [TestCase(5, 6, -1)]
         public void Dodaj_Test(int i, int x, int expect)
         {
             licz.Dodaj(i);
             licz.Dodaj(x);
+            Assert.AreEqual(expect, licz.Value);
+        }
+
+        public void Oddejmij_Test(int i, int x, int expect)
+        {
+            licz.Oddejmnij(i);
+            licz.Oddejmnij(x);
             Assert.AreEqual(expect, licz.Value);
         }
     }

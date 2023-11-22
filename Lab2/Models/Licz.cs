@@ -2,7 +2,12 @@
 {
     public class Licz
     {
-        public int Value;
+        private int _value;
+
+        public Licz(int value)
+        {
+            _value = value;
+        }
 
         public void Dodaj(int add)
         {
